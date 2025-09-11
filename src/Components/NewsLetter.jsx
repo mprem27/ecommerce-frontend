@@ -1,6 +1,12 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom';
 
 const NewsLetter = () => {
+  const location = useLocation();
+
+  if (location.pathname === "/login" ){
+    return ("");
+  }
   return (
     <div className='py-4  bg-[#1e1c2ae5] place-items-center border-b-1 rounded border-white justify-center '>
       <div className='text-xl grid gap-3 text-white '>

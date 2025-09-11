@@ -1,39 +1,42 @@
 import React, { useState, useEffect } from 'react'
-import { Products, Assets } from '../assets/Assets';
+import { useContext } from 'react'
+import { ShopContext } from '../../contexts/ShopContexts'
 import Title from '../Components/Title';
 import ProductCard from '../Components/ProductCard'
 
 const Collections = () => {
+
+  const { products } = useContext(ShopContext)
   const [showfilter, setShowFilter] = useState(false);
   const [filterproducts, setFilterProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [categogy, setCategory] = useState([]);
+  const [category, setCategory] = useState([]);
   const [subcategory, setSubCategory] = useState([]);
   const [sortType, setSortType] = useState('relavent');
   const [priceFilter, setPriceFilter] = useState(null);
 
   const applyFilter = () => {
-    let ProductsDupe = Products.slice()
-    if (categogy.length > 0) {
-      ProductsDupe = ProductsDupe.filter((item) => categogy.includes(item.category))
+    let ProductsDupe = products.slice()
+    if (category.length > 0) {
+      ProductsDupe = ProductsDupe.filter((item) => category.includes(item.category))
     }
     if (subcategory.length > 0) {
       ProductsDupe = ProductsDupe.filter((item) => subcategory.includes(item.subcategory))
     }
 
     if (priceFilter) {
-  ProductsDupe = ProductsDupe.filter((item) => {
-    const price = parseInt(item.price.replace(/[^0-9]/g, ""), 10);
+      ProductsDupe = ProductsDupe.filter((item) => {
+        const price = parseInt(item.price.replace(/[^0-9]/g, ""), 10);
 
-    if (priceFilter === "below1000") return price < 1000;
-    if (priceFilter === "1500") return price >= 1000 && price <= 1500;
-    if (priceFilter === "2000") return price > 1500 && price <= 2000;
-    if (priceFilter === "above3000") return price > 3000;
+        if (priceFilter === "below1000") return price < 1000;
+        if (priceFilter === "1500") return price >= 1000 && price <= 1500;
+        if (priceFilter === "2000") return price > 1500 && price <= 2000;
+        if (priceFilter === "above3000") return price > 3000;
 
-    return true;
-  });
+        return true;
+      });
 
-}
+    }
     setFilterProducts(ProductsDupe)
   }
   useEffect(() => {
@@ -41,10 +44,10 @@ const Collections = () => {
     applyFilter();
     setLoading(false);
     console.log(filterproducts)
-  }, [categogy, subcategory,priceFilter, Products])
+  }, [category, subcategory, priceFilter, products])
 
   const toggleCategory = (e) => {
-    if (categogy.includes(e.target.value)) {
+    if (category.includes(e.target.value)) {
       setCategory(prev => prev.filter(item => item != e.target.value))
     }
     else {
@@ -60,59 +63,40 @@ const Collections = () => {
       setSubCategory(prev => [...prev, e.target.value])
     }
   }
+
+
   const sortProduct = () => {
-    let ProductsDupe = filterproducts.slice()
+    let ProductsDupe = filterproducts.slice();
     switch (sortType) {
-      case "low-high": 
-      setFilterProducts(ProductsDupe.sort((a, b) => parseInt(a.price.replace(/[^0-9]/g, "")) - parseInt(b.price.replace(/[^0-9]/g, "")) )) 
-      break; 
+      case "low-high":
+        setFilterProducts(
+          ProductsDupe.sort((a, b) =>
+            parseInt(a.price.replace(/[^0-9]/g, "")) -
+            parseInt(b.price.replace(/[^0-9]/g, ""))
+          )
+        );
+        break;
       case "high-low":
-         setFilterProducts(ProductsDupe.sort((a, b) => parseInt(b.price.replace(/[^0-9]/g, "")) - parseInt(a.price.replace(/[^0-9]/g, "")) )) 
-         break;
-case "below 1000":
-      setFilterProducts(
-        ProductsDupe.filter(
-          (item) => parseInt(item.price.replace(/[^0-9]/g, "")) < 1000
-        )
-      );
-      break;
-
-    case "1500":
-      setFilterProducts(
-        ProductsDupe.filter(
-          (item) => parseInt(item.price.replace(/[^0-9]/g, "")) >= 1500
-        )
-      );
-      break;
-
-    case "2000":
-      setFilterProducts(
-        ProductsDupe.filter(
-          (item) => parseInt(item.price.replace(/[^0-9]/g, "")) >= 2000
-        )
-      );
-      break;
-
-    case "Above 3000":
-      setFilterProducts(
-        ProductsDupe.filter(
-          (item) => parseInt(item.price.replace(/[^0-9]/g, "")) > 3000
-        )
-      );
-      break;
-
+        setFilterProducts(
+          ProductsDupe.sort((a, b) =>
+            parseInt(b.price.replace(/[^0-9]/g, "")) -
+            parseInt(a.price.replace(/[^0-9]/g, ""))
+          )
+        );
+        break;
       default:
         applyFilter();
         break;
     }
-  }
+  };
+
   useEffect(() => {
     setLoading(true);
     sortProduct();
     setLoading(false)
   }, [sortType])
   return (
-    <div className='flex flex-col sm:flex-row gap-1 sm:gap-19 pt-10 border-t border-gray-300'>
+    <div className='flex flex-col mt-1 py-5 sm:flex-row gap-1 sm:gap-19 pt-10 border-t border-gray-400'>
       <div className='min-w-60'>
         <p onClick={() => setShowFilter(!showfilter)} className='my-2 text-xl flex items-center cursor-pointer gap-2'>Filters</p>
 
@@ -156,27 +140,27 @@ case "below 1000":
 
           <p className='mt-3 mb-3 text-sm font-medium'>Prices</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700 '>
-            <p className='flex gap-2'><input type="checkbox" onChange={() => setPriceFilter("below1000")} value={'below 1000'} />Below 1000</p>
-            <p className='flex gap-2'><input type="checkbox" onChange={() => setPriceFilter("1500")} value={"1500"} />1500</p>
-            <p className='flex gap-2'><input type="checkbox" onChange={() => setPriceFilter("2000")} value={'2000'} />2000</p>
-            <p className='flex gap-2'><input type="checkbox" onChange={() => setPriceFilter("above3000")} value={'above3000'} />Above 3000</p>
+            <p className='flex gap-2'><input type="checkbox" onChange={(e) => setPriceFilter(e.target.checked ? "below1000" : '')} value={'below 1000'} />Below 1000</p>
+            <p className='flex gap-2'><input type="checkbox" onChange={(e) => setPriceFilter(e.target.checked ? "1500" : "")} value={"1500"} />1500</p>
+            <p className='flex gap-2'><input type="checkbox" onChange={(e) => setPriceFilter(e.target.checked ? "2000" : "")} value={'2000'} />2000</p>
+            <p className='flex gap-2'><input type="checkbox" onChange={(e) => setPriceFilter(e.target.checked ? "above3000" : "")} value={'above3000'} />Above 3000</p>
 
 
           </div>
         </div>
       </div>
 
-      <div className='flex-row'>
-        <div className='flex justify-between text-base sm:text-2xl mb-4'>
+      <div className='w-full flex-row '>
+        <div className='flex justify-between items-center w-full  text-base sm:text-2xl mb-4'>
           <Title SubHeading={"Collections"} mainTitle={"ALL"} />
-          <select onChange={(e) => setSortType(e.target.value)} className='border-2 border-gray-300 text-sm px-2'>
+          <select onChange={(e) => setSortType(e.target.value)} className='ml-auto border-2 border-gray-300 text-sm text-[#1e1c2ae5] font-semibold rounded-md py-2 px-2 bg-[#bae6fd]'>  
             <option value="relavent">Sort by: Relavent</option>
             <option value="low-high">Sort by: Low to High</option>
             <option value="high-low">Sort by: High to Low</option>
           </select>
         </div>
 
-        <div className='grid grid-cols-1 gap-30 place-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6'>
+        <div className='grid grid-cols-1 mr-10 place-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-30 gap-y-6'>
 
           {
             loading
@@ -184,7 +168,7 @@ case "below 1000":
               : filterproducts.length === 0 ?
                 <p className='text-center col-span-full text-gray-600'>No Products Found</p>
                 :
-                filterproducts.map((item, index) => <ProductCard key={item._id || index} id={item._id} name={item.name} price={item.price} image={item.images} />)
+                filterproducts.map((item, index) => <ProductCard key={item._id || index} id={item._id} name={item.name} price={item.price} image={item.image} />)
           }
 
         </div>

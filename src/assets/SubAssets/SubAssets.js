@@ -79,6 +79,69 @@ import Maxi_Dress2 from '../SubAssets/Maxi_Dress2.jpg'
 import Maxi_Dress3 from '../SubAssets/Maxi_Dress3.jpg'
 import Maxi_Dress4 from '../SubAssets/Maxi_Dress4.jpg'
 
+// Hooded_Sweatshirt1
+import Hooded_Sweatshirt1 from '../SubAssets/Hooded_Sweatshirt1.jpg'
+import Hooded_Sweatshirt2 from '../SubAssets/Hooded_Sweatshirt2.jpg'
+import Hooded_Sweatshirt3 from '../SubAssets/Hooded_Sweatshirt3.jpg'
+import Hooded_Sweatshirt4 from '../SubAssets/Hooded_Sweatshirt4.jpg'
+
+// Cotton_Shorts1
+import Cotton_Shorts1 from '../SubAssets/Cotton_Shorts1.jpg'
+import Cotton_Shorts2 from '../SubAssets/Cotton_Short2.jpg'
+import Cotton_Shorts3 from '../SubAssets/Cotton_Shorts3.jpg'
+import Cotton_Shorts4 from '../SubAssets/Cotton_Shorts4.jpg'
+
+// Leather_Belt1
+import Leather_Belt1 from '../SubAssets/Leather_Belt1.jpg'
+import Leather_Belt2 from '../SubAssets/Leather_Belt2.jpg'
+import Leather_Belt3 from '../SubAssets/Leather_Belt3.jpg'
+
+// Cut_Jeans1
+import Cut_Jeans1 from '../SubAssets/Cut_Jeans1.jpg'
+import Cut_Jeans2 from '../SubAssets/Cut_Jeans2.jpg'
+import Cut_Jeans3 from '../SubAssets/Cut_Jeans3.jpg'
+import Cut_Jeans4 from '../SubAssets/Cut_Jeans4.jpg'
+// Sleeve_Shirt1
+import Sleeve_Shirt1 from '../SubAssets/Sleeve_Shirt1.jpg'
+import Sleeve_Shirt2 from '../SubAssets/Sleeve_Shirt2.jpg'
+import Sleeve_Shirt3 from '../SubAssets/Sleeve_Shirt3.jpg'
+import Sleeve_Shirt4 from '../SubAssets/Sleeve_Shirt4.jpg'
+
+// Womens_Anarkali1{}
+import Womens_Anarkali1 from '../SubAssets/Womens_Anarkali1.jpg'
+import Womens_Anarkali2 from '../SubAssets/Womens_Anarkali2.jpg'
+import Womens_Anarkali3 from '../SubAssets/Womens_Anarkali3.jpg'
+import Womens_Anarkali4 from '../SubAssets/Womens_Anarkali4.jpg'
+
+// Kids_Denim1
+import Kids_Denim1 from '../SubAssets/Kids_Denim1.jpg'
+import Kids_Denim2 from '../SubAssets/Kids_Denim2.jpg'
+import Kids_Denim3 from '../SubAssets/Kids_Denim3.jpg'
+
+
+// Leather_Loafers1
+import Leather_Loafers1 from '../SubAssets/Leather_Loafers1.jpg'
+import Leather_Loafers2 from '../SubAssets/Leather_Loafers2.jpg'
+import Leather_Loafers3 from '../SubAssets/Leather_Loafers3.jpg'
+import Leather_Loafers4 from '../SubAssets/Leather_Loafers4.jpg'
+
+// High_Heels1
+import High_Heels1 from '../SubAssets/High_Heels1.jpg'
+import High_Heels2 from '../SubAssets/High_Heels2.jpg'
+import High_Heels3 from '../SubAssets/High_Heels3.jpg'
+import High_Heels4 from '../SubAssets/High_Heels4.jpg'
+
+// Kids_Raincoat1
+import Kids_Raincoat1 from '../SubAssets/Kids_Raincoat1.jpg'
+import Kids_Raincoat2 from '../SubAssets/Kids_Raincoat2.jpg'
+import Kids_Raincoat3 from '../SubAssets/Kids_Raincoat3.jpg'
+import Kids_Raincoat4 from '../SubAssets/Kids_Raincoat4.jpg'
+
+// Formal_Blazer1
+import Formal_Blazer1 from '../SubAssets/Formal_Blazer1.jpg'
+import Formal_Blazer2 from '../SubAssets/Formal_Blazer2.jpg'
+import Formal_Blazer3 from '../SubAssets/Formal_Blazer3.jpg'
+import Formal_Blazer4 from '../SubAssets/Formal_Blazer4.jpg'
 
 
 export const SubAssets = {
@@ -123,7 +186,27 @@ export const SubAssets = {
     // Maxi_Dress1
     Maxi_Dress1: [Maxi_Dress1, Maxi_Dress2, Maxi_Dress3, Maxi_Dress4],
 
-
-
+    // Hooded_Sweatshirt1
+    Hooded_Sweatshirt1: [Hooded_Sweatshirt1, Hooded_Sweatshirt2, Hooded_Sweatshirt3, Hooded_Sweatshirt4],
+    // Cotton_Shorts1
+    Cotton_Shorts1: [Cotton_Shorts1, Cotton_Shorts2, Cotton_Shorts3, Cotton_Shorts4],
+    // Leather_Belt1
+    Leather_Belt1: [Leather_Belt1, Leather_Belt2, Leather_Belt3],
+    // Cut_Jeans1
+    Cut_Jeans1: [Cut_Jeans1, Cut_Jeans2, Cut_Jeans3, Cut_Jeans4],
+    // Sleeve_Shirt1
+    Sleeve_Shirt1: [Sleeve_Shirt1, Sleeve_Shirt2, Sleeve_Shirt3, Sleeve_Shirt4],
+    // Womens_Anarkali1
+    Womens_Anarkali1: [Womens_Anarkali1, Womens_Anarkali2, Womens_Anarkali3, Womens_Anarkali4],
+    // Kids_Denim1
+    Kids_Denim1: [Kids_Denim1, Kids_Denim2, Kids_Denim3],
+    // Leather_Loafers1
+    Leather_Loafers1: [Leather_Loafers1, Leather_Loafers2, Leather_Loafers3, Leather_Loafers4],
+    // High_Heels1
+    High_Heels1: [High_Heels1, High_Heels2, High_Heels3, High_Heels4],
+    // Kids_Raincoat1
+    Kids_Raincoat1: [Kids_Raincoat1, Kids_Raincoat2, Kids_Raincoat3, Kids_Raincoat4],
+    // Formal_Blazer1
+    Formal_Blazer1: [Formal_Blazer1, Formal_Blazer2, Formal_Blazer3, Formal_Blazer4],
 
 }

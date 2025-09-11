@@ -4,7 +4,7 @@ import { Assets } from '../assets/Assets'
 
 const About = () => {
   return (
-    <div className='p-1'>
+    <div className='p-1 '>
         <div className='text-center pt-8 border-t'>
           <Title mainTitle={'About'} SubHeading={'Us'}/>
         </div>

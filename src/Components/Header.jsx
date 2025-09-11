@@ -1,11 +1,31 @@
 import React, { useState } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Assets } from '../assets/Assets';
+import { useContext } from 'react';
+import { ShopContext } from '../../contexts/ShopContexts';
+
+
+
+
 const Header = () => {
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+
+  const {token,setToken,navigate} = useContext(ShopContext);
+  
+  const logout = () => {
+    setToken('');
+    localStorage.setItem('token',"");
+    navigate("/login");
+  }
+
+  const location = useLocation();
+
+  if (location.pathname === "/login" ){
+    return ("");
+  }
+
   return (
-    <div className='px-4 w-full flex items-center justify-between py-2  border-b-2 rounded-md font-medium bg-[#bae6fd] '>
-      <Link to={'/'} className='text-3xl grid items-center justify-center text-[#121238]'>GoBok<span className='text-6xl mb-6 text-[#60a5fa] leading-0 inline-flex transform scale-x-200 px-5'>⤻</span></Link>
+    <div className='px-4 fixed top-0 left-0 w-full flex items-center justify-between py-2  border-b-2 rounded-md font-medium bg-[#bae6fd] '>
+      <Link to={'/'} className='items-center justify-center text-[#121238]'><img src={Assets.Logoheader} alt="logoheader" className='h-15 w-auto translate-y-2 object-contain mb-1 scale-150' /></Link>
       <ul className='hidden sm:flex gap-5 text-base text-gray-700'>
 
         <NavLink to={'/'} className='flex flex-col items-start group gap-1'>
@@ -37,15 +57,15 @@ const Header = () => {
         <img src={Assets.search} alt="Search icon" className='w-7 cursor-pointer' />
 
         <div className='group relative'>
-          <img onClick={() => setIsUserLoggedIn(!isUserLoggedIn)} src={Assets.profile} alt="profile image" className='w-7 cursor-pointer' />
+          <img onClick={() => {token ? "" : navigate("/login")}} src={Assets.profile} alt="profile image" className='w-7 cursor-pointer' />
 
           {
-            isUserLoggedIn ?
+            token ?
               <div className='group-hover:block absolute hidden  right-0 pt-4'>
                 <div className='flex flex-col gap-2 w-36 py-3 px-5  bg-[#bfdbfe] text-gray-600 rounded '>
                   <NavLink to={'/profile'} className='hover:text-black' >Profile</NavLink>
                   <NavLink to={'/orders'} className='hover:text-black' >Orders</NavLink>
-                  <NavLink onClick={() => (setIsUserLoggedIn(!isUserLoggedIn))} className='hover:text-black' >Logout</NavLink>
+                  <NavLink onClick={() => logout()} className='hover:text-black' >Logout</NavLink>
                 </div>
 
               </div>

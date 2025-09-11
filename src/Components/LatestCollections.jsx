@@ -1,20 +1,23 @@
 import React,{useState, useEffect} from 'react'
-import { Products,Assets } from '../assets/Assets'
 import Title from './Title'
 import ProductCard from './ProductCard'
+import { useContext } from 'react'
+import { ShopContext } from '../../contexts/ShopContexts'
+import { Assets } from '../assets/Assets'
 
 const LatestCollections = () => {
+  const {products} = useContext(ShopContext)
   const [latestProducts,setLatestProducts] = useState([]);
   const [loading, setLoading] = useState([true]);
 
   useEffect(() => {
-    if(Products.length > 0){
+    if(products && products.length > 0){
       setLoading(true);
-      setLatestProducts(Products.slice(0,15));
+      setLatestProducts(products.slice(0,10));
       setLoading(false);
     }
 
-  },[Products])
+  },[products])
   return (
     <div className='my-2'>
       <div className='text-center py-8 text-3xl'>
@@ -31,7 +34,7 @@ const LatestCollections = () => {
             <p className='text-center col-span-full text-gary-600'>No Products Found</p>
             : 
             latestProducts.map((item,index) =>
-              <ProductCard key={item._id || index} id={item._id} name={item.name} price={item.price} image={item.images}/>
+              <ProductCard key={item._id || index} id={item._id} name={item.name} price={item.price} image={item.image}/>
           )
           }
         </div>

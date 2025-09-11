@@ -1,21 +1,24 @@
 import React,{useState, useEffect} from 'react'
-import { Products,Assets } from '../assets/Assets'
+import { useContext } from 'react'
+import { ShopContext } from '../../contexts/ShopContexts'
+import { Assets } from '../assets/Assets'
 import Title from './Title'
 import ProductCard from './ProductCard'
 
 const BestSellers = () => {
+    const {products} = useContext(ShopContext)
     const [bestSellers, setBestSellers] = useState([]);
   const [loading, setLoading] = useState([true]);
 
   useEffect(() => {
-    if(Products.length > 0){
+    if(products.length > 0){
       setLoading(true);
-      const bestProducts = Products.filter((item)=> (item.bestseller))
-      setBestSellers(bestProducts.slice(0,10));
+      const bestProducts = products.filter((item)=> (item.bestseller))
+      setBestSellers(bestProducts.slice(0,25));
       setLoading(false);
     }
 
-  },[Products])
+  },[products])
   return (
     <div className='my-10'>
       <div className='text-center py-8 text-3xl'>
@@ -32,7 +35,7 @@ const BestSellers = () => {
             <p className='text-center col-span-full text-gary-600'>No Products Found</p>
             : 
             bestSellers.map((item,index) =>
-              <ProductCard key={item._id || index} id={item._id} name={item.name} price={item.price} image={item.images}/>
+              <ProductCard key={item._id || index} id={item._id} name={item.name} price={item.price} image={item.image}/>
           )
           }
         </div>

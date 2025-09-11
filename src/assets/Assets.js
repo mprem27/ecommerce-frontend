@@ -13,6 +13,9 @@ import quality from '../assets/quality.png'
 import about from '../Assets/about.png'
 import contact from '../Assets/contact.png'
 
+import Logoheader from '../assets/Logoheader.png'
+import Logofooter from '../assets/Logofooter.png'
+
 import imageslider1 from '../assets/imageslider1.png'
 import imageslider2 from '../assets/imageslider2.png'
 import imageslider3 from '../assets/imageslider3.png'
@@ -53,6 +56,8 @@ import Flared_Skirt from '../assets/Flared_Skirt.jpg'
 export const Assets = {
     images : [Heroimage, imageslider1, imageslider2, imageslider3, imageslider4 , herobg1,herobg3],
     // herobg:[herobg1,herobg2,herobg3],
+    Logoheader,
+    Logofooter,
     herobg2,
     SubAssets,
     cart,
@@ -80,17 +85,17 @@ export const Assets = {
     Leather_Wallet:[Leather_Wallet,SubAssets.Leather_Wallet1],     
     Womens_Handbag:[Womens_Handbag,SubAssets.Womens_Handbag1],
     Maxi_Dress:[Maxi_Dress,SubAssets.Maxi_Dress1],        
-    Formal_Blazer,
-    Hooded_Sweatshirt, 
-    Kids_Raincoat,
-    Cotton_Shorts,     
-    High_Heels,
-    Leather_Belt,      
-    Leather_Loafers,
-    Cut_Jeans,         
-    Kids_Denim,
-    Sleeve_Shirt,      
-    Womens_Anarkali,
+    Formal_Blazer: [Formal_Blazer,SubAssets.Formal_Blazer1],
+    Hooded_Sweatshirt:[Hooded_Sweatshirt,SubAssets.Hooded_Sweatshirt1], 
+    Kids_Raincoat :[Kids_Raincoat,SubAssets.Kids_Raincoat1],
+    Cotton_Shorts:[Cotton_Shorts,SubAssets.Cotton_Shorts1],    
+    High_Heels: [High_Heels,SubAssets.High_Heels1],
+    Leather_Belt:[Leather_Belt,SubAssets.Leather_Belt1],      
+    Leather_Loafers: [Leather_Loafers,SubAssets.Leather_Loafers1],
+    Cut_Jeans:[Cut_Jeans,SubAssets.Cut_Jeans1],         
+    Kids_Denim:[Kids_Denim,SubAssets.Kids_Denim1],
+    Sleeve_Shirt :[Sleeve_Shirt,SubAssets.Sleeve_Shirt1],      
+    Womens_Anarkali :[Womens_Anarkali,SubAssets.Womens_Anarkali1],
 }
  
 export const Products =[
@@ -223,7 +228,7 @@ export const Products =[
     "category": "Men",
     "subcategory": "Outerwear",
     "sizes": ["S", "M", "L", "XL"],
-    "images": [Hooded_Sweatshirt],
+    "images": [Assets.Hooded_Sweatshirt[0],SubAssets.Hooded_Sweatshirt1[0],SubAssets.Hooded_Sweatshirt1[1],SubAssets.Hooded_Sweatshirt1[2],SubAssets.Hooded_Sweatshirt1[3]],
     "bestseller": false,
     "todaysDeals": true
 },
@@ -235,7 +240,8 @@ export const Products =[
     "category": "Kids",
     "subcategory": "BottomWear",
     "sizes": ["S", "M", "L", "XL"],
-    "images": [Cotton_Shorts],
+    "images": [Assets.Cotton_Shorts[0],SubAssets.Cotton_Shorts1[0],SubAssets.Cotton_Shorts1[1],SubAssets.Cotton_Shorts1[2],SubAssets.Cotton_Shorts1[3]],
+    "bestseller": false,
     "bestseller": true,
     "todaysDeals": false
 },
@@ -247,7 +253,8 @@ export const Products =[
     "category": "Men",
     "subcategory": "Accessories",
     "sizes": ["S", "M", "L", "XL"],
-    "images": [Leather_Belt,Maxi_Dress],
+    "images": [Assets.Leather_Belt[0],SubAssets.Leather_Belt1[0],SubAssets.Leather_Belt1[1],SubAssets.Leather_Belt1[2],SubAssets.Leather_Belt1[3]],
+    "bestseller": false,
     "bestseller": false,
     "todaysDeals": true
 },
@@ -259,7 +266,8 @@ export const Products =[
     "category": "Women",
     "subcategory": "BottomWear",
     "sizes": ["S", "M", "L", "XL"],
-    "images": [Cut_Jeans],
+    "images": [Assets.Cut_Jeans[0],SubAssets.Cut_Jeans1[0],SubAssets.Cut_Jeans1[1],SubAssets.Cut_Jeans1[2],SubAssets.Cut_Jeans1[3]],
+    "bestseller": false,
     "bestseller": true,
     "todaysDeals": false
 },
@@ -271,7 +279,8 @@ export const Products =[
     "category": "Men",
     "subcategory": "TopWear",
     "sizes": ["S", "M", "L", "XL"],
-    "images": [Sleeve_Shirt],
+    "images": [Assets.Sleeve_Shirt[0],SubAssets.Sleeve_Shirt1[0],SubAssets.Sleeve_Shirt1[1],SubAssets.Sleeve_Shirt1[2],SubAssets.Sleeve_Shirt1[3]],
+    "bestseller": false,
     "bestseller": false,
     "todaysDeals": true
 },
@@ -283,7 +292,7 @@ export const Products =[
     "category": "Women",
     "subcategory": "EthnicWear",
     "sizes": ["S", "M", "L", "XL"],
-    "images": [Womens_Anarkali],
+    "images": [Assets.Womens_Anarkali[0],SubAssets.Womens_Anarkali1[0],SubAssets.Womens_Anarkali1[1],SubAssets.Womens_Anarkali1[2],SubAssets.Womens_Anarkali1[3]],
     "bestseller": true,
     "todaysDeals": false
 },
@@ -295,7 +304,7 @@ export const Products =[
     "category": "Kids",
     "subcategory": "BottomWear",
     "sizes": ["S", "M", "L", "XL"],
-    "images": [Kids_Denim],
+    "images": [Assets.Kids_Denim[0],SubAssets.Kids_Denim1[0],SubAssets.Kids_Denim1[1],SubAssets.Kids_Denim1[2],SubAssets.Kids_Denim1[3]],
     "bestseller": true,
     "todaysDeals": true
 },
@@ -307,7 +316,7 @@ export const Products =[
     "category": "Men",
     "subcategory": "Footwear",
     "sizes": ["S", "M", "L", "XL"],
-    "images": [Leather_Loafers],
+    "images": [Assets.Leather_Loafers[0],SubAssets.Leather_Loafers1[0],SubAssets.Leather_Loafers1[1],SubAssets.Leather_Loafers1[2],SubAssets.Leather_Loafers1[3]],
     "bestseller": true,
     "todaysDeals": false
 },
@@ -319,7 +328,7 @@ export const Products =[
     "category": "Women",
     "subcategory": "Footwear",
     "sizes": ["S", "M", "L", "XL"],
-    "images": [High_Heels],
+    "images": [Assets.High_Heels[0],SubAssets.High_Heels1[0],SubAssets.High_Heels1[1],SubAssets.High_Heels1[2],SubAssets.High_Heels1[3]],
     "bestseller": false,
     "todaysDeals": true
 },
@@ -331,7 +340,7 @@ export const Products =[
     "category": "Kids",
     "subcategory": "Outerwear",
     "sizes": ["S", "M", "L", "XL"],
-    "images": [Kids_Raincoat],
+    "images": [Assets.Kids_Raincoat[0],SubAssets.Kids_Raincoat1[0],SubAssets.Kids_Raincoat1[1],SubAssets.Kids_Raincoat1[2],SubAssets.Kids_Raincoat1[3]],
     "bestseller": false,
     "todaysDeals": false
 },
@@ -343,7 +352,7 @@ export const Products =[
     "category": "Men",
     "subcategory": "Outerwear",
     "sizes": ["S", "M", "L", "XL"],
-    "images": [Formal_Blazer],
+    "images": [Assets.Formal_Blazer[0],SubAssets.Formal_Blazer1[0],SubAssets.Formal_Blazer1[1],SubAssets.Formal_Blazer1[2],SubAssets.Formal_Blazer1[3]],
     "bestseller": true,
     "todaysDeals": true
 },
@@ -355,7 +364,7 @@ export const Products =[
     "category": "Women",
     "subcategory": "Accessories",
     "sizes": ["S", "M", "L", "XL"],
-    "images": [Womens_Handbag],
+    "images": [Assets.Womens_Handbag[0],SubAssets.Womens_Handbag1[0],SubAssets.Womens_Handbag1[1],SubAssets.Womens_Handbag1[2],SubAssets.Womens_Handbag1[3]],
     "bestseller": true,
     "todaysDeals": false
 },
@@ -379,7 +388,7 @@ export const Products =[
     "category": "Men",
     "subcategory": "BottomWear",
     "sizes": ["S", "M", "L", "XL"],
-    "images": [ Mens_Cargo,],
+    "images": [Assets.Mens_Cargo[0],SubAssets.Mens_Cargo1[0],SubAssets.Mens_Cargo1[1],SubAssets.Mens_Cargo1[2],SubAssets.Mens_Cargo1[3]],
     "bestseller": true,
     "todaysDeals": false
 },
@@ -391,7 +400,7 @@ export const Products =[
     "category": "Women",
     "subcategory": "BottomWear",
     "sizes": ["S", "M", "L", "XL"],
-    "images": [Flared_Skirt],
+    "images": [Assets.Flared_Skirt[0],SubAssets.Flared_Skirt1[0],SubAssets.Flared_Skirt1[1],SubAssets.Flared_Skirt1[2],SubAssets.Flared_Skirt1[3]],
     "bestseller": false,
     "todaysDeals": true
 },
