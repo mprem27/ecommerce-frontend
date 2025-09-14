@@ -1,22 +1,25 @@
 import React,{useState, useEffect} from 'react'
-import { Products,Assets } from '../assets/Assets'
+import {Assets } from '../assets/Assets'
 import Title from '../Components/Title'
+import { useContext } from 'react'
+import { ShopContext } from '../../contexts/ShopContexts'
 import ProductCard from '../Components/ProductCard'
 
 
 const Todaysdeals = () => {
+    const {products} = useContext(ShopContext)
  const [todaysProducts, setTodaysProducts] = useState([]);
   const [loading, setLoading] = useState([true]);
 
   useEffect(() => {
-    if(Products.length > 0){
+    if(products.length > 0){
       setLoading(true);
-      const todaysDeals = Products.filter((item)=> (item.todaysDeals))
+      const todaysDeals = products.filter((item)=> (item.todaysDeals))
       setTodaysProducts(todaysDeals.slice(0,10));
       setLoading(false);
     }
 
-  },[Products])
+  },[products])
   return (
     <div className='py-1 pb-5'>
       <div className='text-center border-t py-8 text-3xl'>

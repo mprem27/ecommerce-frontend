@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { Products } from '../assets/Assets';
+
 
 const ProductCard = ({ id, name, image, price }) => {
   const imgSrc = Array.isArray(image) ? image[0] : image || '/fallback.jpg';
