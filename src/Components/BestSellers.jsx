@@ -23,7 +23,7 @@ const BestSellers = () => {
     <div className='my-10'>
       <div className='text-center py-8 text-3xl'>
         <Title SubHeading={"BestSellers"} mainTitle={"GoBok"} />
-        <img src={Assets.BestSellers} alt="New collections image" className='w-full h-100% py-2 hover:p-3 transition-all ease-in-out duration-400 '/>
+        <img src={Assets.bestsellers} alt="New collections image" className='w-full h-100% py-2 hover:p-3 transition-all ease-in-out duration-400 '/>
         <p className='w-3/4 m-auto text-xs sm:tex-sm md:text-base text-gary-800'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis obcaecati temporibus corporis adipisci tempora voluptatum expedita rerum aperiam molestiae, quod hic voluptatem quas a iste id perferendis aliquam repudiandae vlite cumque.</p>
       </div>
         <div className='grid grid-cols-1 place-items-center sm:grid-cols-3  md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>

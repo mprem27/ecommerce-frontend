@@ -10,7 +10,7 @@ const Policy = () => {
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, veritatis perspiciatis corrupti excepturi eum necessitatibus recusandae facilis soluta nesciunt consectetur.</p>
       </div>
       <div>
-        <img src={Assets.Return} alt="Up to 10 day's Return Policy" className='w-12 m-auto mb-5'/>
+        <img src={Assets.returns} alt="Up to 10 day's Return Policy" className='w-12 m-auto mb-5'/>
         <p className='font-semibold'>Up to 10 day's Return Policy</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, veritatis perspiciatis corrupti excepturi eum necessitatibus recusandae facilis soluta nesciunt consectetur.</p>
       </div>

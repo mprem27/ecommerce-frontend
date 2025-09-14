@@ -25,7 +25,7 @@ const Header = () => {
 
   return (
     <div className='px-4 fixed top-0 left-0 w-full flex items-center justify-between py-2  border-b-2 rounded-md font-medium bg-[#bae6fd] '>
-      <Link to={'/'} className='items-center justify-center text-[#121238]'><img src={Assets.Logoheader} alt="logoheader" className='h-15 w-auto translate-y-2 object-contain mb-1 scale-150' /></Link>
+      <Link to={'/'} className='items-center justify-center text-[#121238]'><img src={Assets.logoheader} alt="logoheader" className='h-15 w-auto translate-y-2 object-contain mb-1 scale-150' /></Link>
       <ul className='hidden sm:flex gap-5 text-base text-gray-700'>
 
         <NavLink to={'/'} className='flex flex-col items-start group gap-1'>

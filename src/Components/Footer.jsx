@@ -12,7 +12,7 @@ const Footer = () => {
     <div className='px-4  bg-[#1e1c2ae5]'>
       <div className='grid grid-cols-1 sm:grid-cols-4 gap-4 mb-10 pt-4 text-sm'>
         <div >
-      <Link to={'/'} className='items-center justify-center text-[#121238]'><img src={Assets.Logofooter} alt="logoheader" className='h-15 w-auto  object-contain mb-1 scale-120 ml-5' /></Link>
+      <Link to={'/'} className='items-center justify-center text-[#121238]'><img src={Assets.logofooter} alt="logoheader" className='h-15 w-auto  object-contain mb-1 scale-120 ml-5' /></Link>
           <p className='w-full md:w-2/3 text-gray-300 '>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis corrupti aut totam veniam, consequatur quo ad, eius culpa cumque laborum nisi, quisquam ducimus. Culpa maxime facilis cum expedita quas amet.</p>
         </div>
         <div>
