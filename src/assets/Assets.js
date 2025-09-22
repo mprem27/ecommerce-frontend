@@ -5,12 +5,12 @@ import { SubAssets } from '../assets/SubAssets/SubAssets'
 import cart from './cart.png'
 import menu from './menu.png'
 import search from './search.png'
-import profile from './menu.png'
-import heroimage from './hero.jpg'
+import profile from './Profile.png'
+import heroimage from './Hero.jpg' 
 import collectionsimage from './new_collections.jpg'
-import bestsellers from './bestsellers.png'
+import bestsellers from './BestSellers.png' 
 import exchange from './exchange.png'
-import returns from './return.png'
+import returns from './Return.png' 
 import quality from './quality.png'
 import about from './about.png'
 import contact from './contact.png'
@@ -20,8 +20,8 @@ import razorpay from './razorpay.png'
 
 
 // logos
-import logoheader from './logoheader.png'
-import logofooter from './logofooter.png'
+import logoheader from './Logoheader.png' // Corrected case
+import logofooter from './Logofooter.png' // Corrected case
 
 // sliders
 import imageslider1 from './imageslider1.png'
@@ -36,8 +36,7 @@ import herobg3 from './herobg3.png'
 
 
 export const Assets = {
-    images : [heroimage, imageslider1, imageslider2, imageslider3, imageslider4 , herobg1,herobg3],
-    // herobg:[herobg1,herobg2,herobg3],
+    images: [heroimage, imageslider1, imageslider2, imageslider3, imageslider4, herobg1, herobg3],
     logoheader,
     logofooter,
     herobg2,
@@ -56,6 +55,4 @@ export const Assets = {
     emptycart,
     razorpay,
     stripe
-    
 }
- 
