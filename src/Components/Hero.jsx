@@ -15,9 +15,9 @@ const Hero = () => {
 
   return (
     <div className='-mx-4 sm:-mx-[5vh] md:-mx-[7vh] lg:-mx-[9vh]'>
-      <div className='flex flex-col sm:flex-row items-center w-full h-70 sm:h-[500px] bg-cover bg-center rounded-b-xl rounded-t-md overflow-hidden px-4 sm:px-8 mt-2' style={{ backgroundImage: `url(${Assets.herobg2})` }}  >
+      <div className='relative flex flex-col sm:flex-row items-center w-full h-70 sm:h-[500px] bg-cover bg-no-repeat bg-center rounded-b-xl rounded-t-md  overflow-hidden px-4 sm:px-8 mt-2' style={{ backgroundImage: `url(${Assets.herobg2})` }}  >
         <div className='w-full place-items-center sm:w-1/2 flex justify-center py-10 sm:py-2'>
-          <div className='text-[#333]'>
+          {/* <div className='text-[#333]'>
             <p className=' text-5xl sm:text-6xl font-extrabold text-orange-400 [text-shadow:_2px_2px_6px_black]'>
               Dussehra Sale
             </p>
@@ -30,13 +30,11 @@ const Hero = () => {
               </p>
               <p className='w-10 md:w-11 h-[2px] bg-white group-hover:w-30 transition-all ease-in-out duration-700'></p>
             </div>
-          </div>
+          </div> */}
         </div>
-        <img src={Assets.images[currentIndex]} alt="hero" className='hidden sm:block sm:w-1/2 h-[300px] object-cover mt-8 rounded-xl mr-10 shadow-[0_4px_20px_rgba(255,255,255,0.8)]' />
+        <img src={Assets.images[currentIndex]} alt="hero-images" className='block sm:hidden absolute bottom-3 right-4 w-48 h-28 object-cover rounded-lg shadow-md' />
+        <img src={Assets.images[currentIndex]} alt="hero-images" className='hidden sm:block absolute bottom-1 left-3  w-[490px] h-[250px] scale-80 object-cover rounded-xl shadow-md' />
       </div>
-      {/* <div className="flex sm:hidden justify-center items-center mt-6">
-        <img src={Assets.images[currentIndex]} alt="hero" className="w-full h-[300px] object-cover rounded-xl shadow-[0_4px_20px_rgba(255,255,255,0.8)]" />
-      </div> */}
     </div>
   );
 

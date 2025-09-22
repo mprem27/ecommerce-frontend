@@ -63,7 +63,7 @@ const Login = () => {
 
     return (
         <div className='flex flex-col items-center justify-center w-full -mt-10  '>
-            <span className='items-center justify-center text-[#121238]'><img src={Assets.Logoheader} alt="logoheader" className='h-15 w-auto translate-y-2 object-contain mb-1 scale-150' /></span>
+            <span className='items-center justify-center text-[#121238]'><img src={Assets.logoheader} alt="logoheader" className='h-15 w-auto translate-y-2 object-contain mb-1 scale-150' /></span>
 
             <form onSubmit={(e) => onSubmitHandler(e)} className='flex flex-col items-center w-[90%] sm: max-w-sm m-auto  gap-4 text-gray-700 shadow-md rounded-2xl px-8 py-4 bg-[#bae6fd]'>
                 <div className='inline-flex items-center gap-2 mb-2 mt-10'>

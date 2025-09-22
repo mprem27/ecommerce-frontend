@@ -12,6 +12,9 @@ import Todaysdeals from './pages/Todaysdeals'
 import NewsLetter from './Components/NewsLetter';
 import Login from './pages/Login';
 import { ToastContainer } from 'react-toastify'
+import Cart from './pages/Cart';
+import PlaceOrder from './pages/PlaceOrder';
+import Verify from './pages/Verify';
 
 
 
@@ -31,7 +34,9 @@ function App() {
           <Route path='/About' element={<About />} />
           <Route path='/Contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
-
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/place-order' element={<PlaceOrder />} />
+           <Route path='/verify' element={<Verify />} />
         </Routes>
       </div>
       <NewsLetter />

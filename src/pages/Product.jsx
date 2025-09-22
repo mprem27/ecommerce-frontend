@@ -5,7 +5,7 @@ import { ShopContext } from '../../contexts/ShopContexts';
 
 
 const Product = () => {
-   const {products,addToCart} = useContext(ShopContext)
+   const {products,addToCart,navigate,buyNow} = useContext(ShopContext)
   const { Productid } = useParams();
   const [productData, setProductData] = useState(null);
   const [image, setImage] = useState('');
@@ -28,6 +28,14 @@ const Product = () => {
       }
     })
   }
+   const handleBuyNow = () => {
+        if (!size) {
+            toast.error('Please select a size first!');
+            return;
+        }
+        addToCart(productData._id, size, Quantity);
+        navigate('/place-order');
+    }
   useEffect(() => {
     fetchProduct();
   }, [Productid, products])
@@ -86,8 +94,8 @@ const Product = () => {
             <button onClick={IncreaseQuantity} className='px-3 py-1 bg-gray-300 rounded hover:bg-gray-400'>+</button> 
             </div>
 
-            <button onClick={()=>addToCart(productData._id,size )} className='bg-blue-300 rounded-xl text-black px-8 py-3 text-sm cursor-pointer hover:bg-blue-400'>Add to Cart</button>
-            <button className='bg-blue-300 rounded-xl text-black px-8 py-3 text-sm cursor-pointer hover:bg-blue-400'>Buy</button>
+            <button onClick={()=>addToCart(productData._id, size, Quantity)} className='bg-blue-300 rounded-xl text-black px-8 py-3 text-sm cursor-pointer hover:bg-blue-400'>Add to Cart</button>
+            <button onClick={handleBuyNow} className='bg-blue-300 rounded-xl text-black px-8 py-3 text-sm cursor-pointer hover:bg-blue-400'>Buy</button>
 
           </div>
         </div>

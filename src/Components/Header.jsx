@@ -9,7 +9,7 @@ import { ShopContext } from '../../contexts/ShopContexts';
 
 const Header = () => {
 
-  const {token,setToken,navigate} = useContext(ShopContext);
+  const {token,setToken,navigate,getCartCount} = useContext(ShopContext);
   
   const logout = () => {
     setToken('');
@@ -24,7 +24,7 @@ const Header = () => {
   }
 
   return (
-    <div className='px-4 fixed top-0 left-0 w-full flex items-center justify-between py-2  border-b-2 rounded-md font-medium bg-[#bae6fd] '>
+    <div className='px-4 fixed z-20 top-0 left-0 w-full flex items-center justify-between py-2  border-b-2 rounded-md font-medium bg-[#bae6fd] '>
       <Link to={'/'} className='items-center justify-center text-[#121238]'><img src={Assets.logoheader} alt="logoheader" className='h-15 w-auto translate-y-2 object-contain mb-1 scale-150' /></Link>
       <ul className='hidden sm:flex gap-5 text-base text-gray-700'>
 
@@ -72,7 +72,9 @@ const Header = () => {
               : ""
           }
         </div>
-        <Link to={'/Cart'}> <img src={Assets.cart} alt="cart icon" className='w-7 cursor-pointer' /> </Link>
+        <Link className='relative' to={'/Cart'}> <img src={Assets.cart} alt="cart icon" className='w-7 cursor-pointer' />
+        <p className='absolute right-[-5px] top-[-5px] w-4 text-center leading-4 bg-blue-400 text-white aspect-square rounded-full text-[8px]'>{getCartCount()}</p>
+         </Link>
       </div>
 
     </div>

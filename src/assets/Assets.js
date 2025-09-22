@@ -14,6 +14,10 @@ import returns from './return.png'
 import quality from './quality.png'
 import about from './about.png'
 import contact from './contact.png'
+import emptycart from './emptycart.png'
+import stripe from './stripe.png'
+import razorpay from './razorpay.png'
+
 
 // logos
 import logoheader from './logoheader.png'
@@ -76,6 +80,9 @@ export const Assets = {
     quality,
     about,
     contact,
+    emptycart,
+    razorpay,
+    stripe
     // CottonShirt:[CottonShirt,SubAssets.CottonShirt1],
     // BlueJeans:[BlueJeans,SubAssets.BlueJeans1],
     // KidstShirt:[KidstShirt,SubAssets.KidstShirt1],
