@@ -33,13 +33,15 @@ import imageslider4 from './imageslider4.png'
 import herobg1 from './herobg1.png'
 import herobg2 from './herobg2.png'
 import herobg3 from './herobg3.png'
+import herobg5 from './herobg5.png'
+import herobg6 from './herobg6.png'
 
 
 export const Assets = {
     images: [heroimage, imageslider1, imageslider2, imageslider3, imageslider4, herobg1, herobg3],
     logoheader,
     logofooter,
-    herobg2,
+    bgimage:[herobg2,herobg5,herobg6],
     SubAssets,
     cart,
     menu,
