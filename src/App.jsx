@@ -15,6 +15,7 @@ import { ToastContainer } from 'react-toastify'
 import Cart from './pages/Cart';
 import PlaceOrder from './pages/PlaceOrder';
 import Verify from './pages/Verify';
+import Orders from './pages/Orders';
 
 
 
@@ -37,6 +38,7 @@ function App() {
           <Route path='/cart' element={<Cart />} />
           <Route path='/place-order' element={<PlaceOrder />} />
            <Route path='/verify' element={<Verify />} />
+           <Route path='/orders' element={<Orders />} />
         </Routes>
       </div>
       <NewsLetter />
