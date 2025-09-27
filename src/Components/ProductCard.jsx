@@ -33,9 +33,9 @@ const ProductCard = ({ id, name, image, price }) => {
       </div>
       <p className='pt-3 pb-1 text-sm font-bold'>{name}</p>
       <p className='text-sm font-medium'>₹ {price}</p>
-      {/* Consistent Delivery Date */}
-      <p className='text-xs text-gray-700 mt-1'>
-        Delivery expected by: <span className='font-semibold'>{deliveryDate}</span>
+      
+      <p className='text-xs text-gray-800 text-semibold mt-1'>
+        Delivery expected by: <span className='text-black font-bold'>{deliveryDate}</span>
       </p>
     </Link>
   );

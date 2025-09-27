@@ -53,6 +53,24 @@ const Orders = () => {
     }
   };
 
+  const deleteOrder = async (orderId) => {
+  if (!window.confirm("Are you sure you want to permanently delete this order?")) return;
+
+  try {
+    const response = await axios.post(BackendURL + "/api/order/removeOrder", { orderId },{ headers: { token } });
+
+    if (response.data.success) {
+      toast.success("Order deleted successfully.");
+      setUserOrders((prevOrders) => prevOrders.filter((e) => e._id !== orderId));
+    } else {
+      toast.error("Failed to delete order.");
+    }
+  } catch (error) {
+    console.log("Error deleting order:", error);
+    toast.error("An error occurred while deleting the order.");
+  }
+};
+
   const StatusBadge = ({ status }) => {
     const label = status.charAt(0).toUpperCase() + status.slice(1);
     let classes = 'px-3 py-1 rounded-full text-xs font-semibold';
@@ -84,12 +102,10 @@ const Orders = () => {
             {userOrders.map((order, orderIndex) => (
               <div key={orderIndex} className='w-full shadow-2xl rounded-xl border border-gray-200 bg-white p-4 sm:p-6 relative'>
 
-                
                 <div className='absolute top-4 right-4'>
                   <StatusBadge status={order.status || 'pending'} />
                 </div>
 
-                
                 <div className='flex flex-col gap-4'>
                   {order.items && order.items.map((item, index) => {
                     const productData = products.find((product) => product._id === item._id);
@@ -97,7 +113,6 @@ const Orders = () => {
 
                     return (
                       <div key={index} className='flex flex-row items-start gap-4 w-full border border-gray-200 bg-gray-50 p-3 rounded-lg'>
-
                         <img
                           src={productData.image?.[0] || Assets.placeholder}
                           alt={productData.name}
@@ -121,7 +136,7 @@ const Orders = () => {
 
                           <div className='text-sm text-gray-900 mt-2'>
                             <p>Order ID: <span className='font-semibold'>{order._id.slice(0, 10)}...</span></p>
-                            <p>Delivery expected by: <span className='font-semibold'>{new Date(order.date || order.createdAt).toLocaleDateString()}</span></p>
+                            <p>Delivery expected by: <span className='font-semibold'>{new Date(order.date || order.createdAt).toLocaleDateString()}</span></p>
                           </div>
                         </div>
                       </div>
@@ -129,15 +144,23 @@ const Orders = () => {
                   })}
                 </div>
 
-                {/* Grand Total & Cancel Button */}
+                {/* Grand Total, Cancel & Delete Buttons */}
                 <div className='flex justify-between items-center pt-4 mt-4 border-t border-gray-100'>
                   <p className='text-lg font-bold text-gray-900'>Grand Total: {currency}{order.amount.toFixed(2)}</p>
-                  <button
-                    onClick={() => cancelOrder(order._id, order.status)}
-                    className='font-medium text-gray-800 border px-6 py-2 border-gray-400 rounded-md hover:bg-blue-400 border-blue-800 transition-all ease-in-out duration-500'
-                  >
-                    Cancel Order
-                  </button>
+                  <div className='flex gap-3'>
+                    <button
+                      onClick={() => cancelOrder(order._id, order.status)}
+                      className='font-medium text-gray-800 border px-6 py-2 border-gray-400 rounded-md hover:bg-blue-400 border-blue-800 transition-all ease-in-out duration-500'
+                    >
+                      Cancel Order
+                    </button>
+                    <button
+                      onClick={() => deleteOrder(order._id)}
+                      className='font-medium text-gray-800 border px-6 py-2 border-gray-400 rounded-md hover:bg-red-500 hover:text-white border-blue-800 transition-all ease-in-out duration-500'
+                    >
+                      Delete Order
+                    </button>
+                  </div>
                 </div>
 
               </div>
