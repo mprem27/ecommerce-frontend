@@ -185,7 +185,7 @@ const PlaceOrder = () => {
           <div onClick={() => setMethod("razorpay")} className={`flex items-center gap-3 border p-2 px-3 rounded-xl cursor-pointer w-full hover:border-[1.5px] border-blue-400 transition-all ease-in-out duration-500 ${method === "razorpay" ? "border-gray-500" : "border-gray-300"}`}>
             <p className={`min-w-3.5 h-3.5 border rounded-full ${method === "razorpay" ? "border-gray-300 bg-orange-400" : "border-gray-400"}`}></p>
             <p>Razorpay</p>
-            <img src={Assets.razorpay} alt="Razorpay payment gateway" className='h-5 mx-4 ml-auto' />
+            <img src={Assets.razorpay} alt="Razorpay payment gateway" className='h-7 mx-4 ml-auto' />
           </div>
           <div onClick={() => setMethod("cod")} className={`flex items-center gap-3 border p-2 px-3 rounded-xl cursor-pointer w-full hover:border-[1.5px] border-blue-400 transition-all ease-in-out duration-500 ${method === "cod" ? "border-gray-500" : "border-gray-300"}`}>
             <p className={`min-w-3.5 h-3.5 border rounded-full ${method === "cod" ? "border-gray-300 bg-orange-400" : "border-gray-400"}`}></p>
