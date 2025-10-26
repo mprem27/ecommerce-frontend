@@ -70,7 +70,7 @@ const Header = () => {
                 }
               }}
               placeholder="Find Deals You’ll Love"
-              className='px-3 py-1 w-45 sm:w-60 rounded-lg border border-gray-400 outline-none focus:ring-2 focus:ring-blue-400 transition-all bg-white text-gray-700'
+              className='px-3 py-1 w-45 sm:w-60 rounded-lg border border-gray-400 outline-none focus:ring-2 focus:ring-blue-400 transition-all bg-white text-gray-700 z-30'
             />
           )}
           <img
