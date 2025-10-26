@@ -23,8 +23,10 @@ const LatestCollections = () => {
       <div className='text-center py-8 text-3xl'>
         <Title SubHeading={"Collections"} mainTitle={"New"} />
         <img src={Assets.collectionsimage} alt="New collections image" className='w-full py-2 hover:p-3 transition-all ease-in-out duration-400 '/>
-        <p className='w-3/4 m-auto text-xs sm:tex-sm md:text-base text-gary-800'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis obcaecati temporibus corporis adipisci tempora voluptatum expedita rerum aperiam molestiae, quod hic voluptatem quas a iste id perferendis aliquam repudiandae vlite cumque.</p>
-      </div>
+ <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-800'>
+Step into style with our <span className='font-semibold text-blue-500'>New Collection</span>, where every outfit is thoughtfully designed to turn heads and elevate your wardrobe. From bold, modern silhouettes to timeless classics, each piece blends comfort, quality, and creativity. Whether you're dressing for everyday moments or special occasions, our collection brings energy, personality, and confidence to your look. 
+</p>
+    </div>
         <div className='grid grid-cols-1 place-items-center sm:grid-cols-3  md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
           {
             loading ?
