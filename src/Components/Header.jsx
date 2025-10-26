@@ -55,10 +55,9 @@ const Header = () => {
       </ul>
 
       {/* Right Section */}
-      <div className='flex items-center gap-6 relative'>
+      <div className='flex items-center gap-3 sm:gap-6 relative'>
         {/* Search Bar & Icon */}
-        {/* Search Bar & Icon */}
-        <div className='flex items-center gap-2 relative'>
+        <div className='flex items-center gap-1 relative'>
           {showSearch && (
             <input
               type="text"
@@ -71,7 +70,7 @@ const Header = () => {
                 }
               }}
               placeholder="Find Deals You’ll Love"
-              className='px-3 py-1 w-40 sm:w-56 rounded-lg border border-gray-400 outline-none focus:ring-2 focus:ring-blue-400 transition-all bg-white text-gray-700'
+              className='px-3 py-1 w-45 sm:w-56 rounded-lg border border-gray-400 outline-none focus:ring-2 focus:ring-blue-400 transition-all bg-white text-gray-700'
             />
           )}
           <img
@@ -88,6 +87,7 @@ const Header = () => {
             className='w-7 cursor-pointer'
           />
         </div>
+
 
 
         {/* Profile Menu */}
