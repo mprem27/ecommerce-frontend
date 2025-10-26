@@ -23,7 +23,7 @@ const Header = () => {
     <div className='px-4 fixed z-20 top-0 left-0 w-full flex items-center justify-between py-2 border-b-2 rounded-md font-medium bg-[#bae6fd]'>
       {/* Logo */}
       <Link to={'/'} className='items-center justify-center text-[#121238]'>
-        <img src={Assets.logoheader} alt="logoheader" className='h-15 w-auto translate-y-2 object-contain mb-1 scale-150' />
+        <img src={Assets.logoheader} alt="logoheader" className='h-13 sm:h-15 w-auto translate-y-2 object-contain mb-1 scale-150' />
       </Link>
 
       {/* Navigation Links */}
@@ -70,7 +70,7 @@ const Header = () => {
                 }
               }}
               placeholder="Find Deals You’ll Love"
-              className='px-3 py-1 w-45 sm:w-56 rounded-lg border border-gray-400 outline-none focus:ring-2 focus:ring-blue-400 transition-all bg-white text-gray-700'
+              className='px-3 py-1 w-48 sm:w-60 rounded-lg border border-gray-400 outline-none focus:ring-2 focus:ring-blue-400 transition-all bg-white text-gray-700'
             />
           )}
           <img
@@ -84,7 +84,7 @@ const Header = () => {
               }
             }}
             alt="Search icon"
-            className='w-7 cursor-pointer'
+            className='w-5 sm:w-7 cursor-pointer'
           />
         </div>
 
@@ -99,7 +99,7 @@ const Header = () => {
             }}
             src={Assets.profile}
             alt="profile"
-            className='w-7 cursor-pointer'
+            className='w-5 sm:w-7 cursor-pointer'
           />
 
           {token && showMenu && (
@@ -113,7 +113,7 @@ const Header = () => {
 
         {/* Cart Icon */}
         <Link className='relative' to={'/Cart'}>
-          <img src={Assets.cart} alt="cart icon" className='w-7 cursor-pointer' />
+          <img src={Assets.cart} alt="cart icon" className='w-5 sm:w-7  cursor-pointer' />
           <p className='absolute right-[-5px] top-[-5px] w-4 text-center leading-4 bg-blue-400 text-white aspect-square rounded-full text-[8px]'>{getCartCount()}</p>
         </Link>
       </div>

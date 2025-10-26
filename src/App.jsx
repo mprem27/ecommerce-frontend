@@ -26,7 +26,7 @@ function App() {
       <ToastContainer/>
       <Header />
       
-      <div className='px-4 py-20 bg-[#e0f2fe] sm:px-[5vh] md:-[7vh] lg:-[9vh]'>
+      <div className='px-4 py-16 sm:py-20 bg-[#e0f2fe] sm:px-[5vh] md:-[7vh] lg:-[9vh]'>
         <Routes >
           <Route path='/' element={<Home />} />
           <Route path='/Collections' element={<Collections />} />
