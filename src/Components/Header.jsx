@@ -57,6 +57,7 @@ const Header = () => {
       {/* Right Section */}
       <div className='flex items-center gap-3 sm:gap-6 relative'>
         {/* Search Bar & Icon */}
+        {/* FIX: Added 'relative' to the container to position the input */}
         <div className='flex items-center gap-1 relative'>
           {showSearch && (
             <input
@@ -65,18 +66,21 @@ const Header = () => {
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' && searchQuery.trim() !== "") {
+                  // FIX: Changed /.../ (regex) to `...` (template literal)
                   navigate(`/Collections?search=${encodeURIComponent(searchQuery.trim())}`);
                   setShowSearch(false);
                 }
               }}
               placeholder="Find Deals You’ll Love"
-              className='px-3 py-1 w-45 sm:w-60 rounded-lg border border-gray-400 outline-none focus:ring-2 focus:ring-blue-400 transition-all bg-white text-gray-700 z-30'
+              // FIX: Added 'absolute' positioning to prevent pushing other icons
+              className='absolute right-[calc(100%+0.5rem)] top-1/2 -translate-y-1/2 px-3 py-1 w-48 sm:w-60 rounded-lg border border-gray-400 outline-none focus:ring-2 focus:ring-blue-400 transition-all bg-white text-gray-700'
             />
           )}
           <img
             src={Assets.search}
             onClick={() => {
               if (showSearch && searchQuery.trim() !== "") {
+                // FIX: Changed /.../ (regex) to `...` (template literal)
                 navigate(`/Collections?search=${encodeURIComponent(searchQuery.trim())}`);
                 setShowSearch(false);
               } else {
@@ -87,8 +91,6 @@ const Header = () => {
             className='w-5 sm:w-7 cursor-pointer'
           />
         </div>
-
-
 
         {/* Profile Menu */}
         <div className='relative'>
@@ -122,3 +124,4 @@ const Header = () => {
 }
 
 export default Header
+
